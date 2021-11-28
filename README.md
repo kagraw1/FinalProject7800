@@ -1,4 +1,4 @@
-# workflow_demo
+# workflow
 This repository is using dlilab- manuscript template. It is intended to use prostate cancer data set using R programming and to visualize the mutant genes and how these genes  are involved in different prostate cancer types. Using R programming, I am trying to make automated and organized analysis, as much as possible.
 
 This repository has the following file folders:
