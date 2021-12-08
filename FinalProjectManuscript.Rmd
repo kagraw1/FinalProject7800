@@ -1,0 +1,117 @@
+```{r, echo=FALSE}
+library(tinytex)
+```
+
+---
+title: "FinalProject"
+author: "Kirti Agrawal"
+date: "27/11/2021"
+output: pdf_document
+geometry: margin=1.0in
+font-size: 12pt
+header-includes:
+  ~ \usepackage{helvet}
+  ~ \usepackage{setspace}
+  ~ \doublespacing
+  ~ \usepackage [left] {lineno}
+  ~ \linenumbers
+  
+---
+
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(knitr)
+library(here)
+library(rvest)
+library(dplyr)
+library(cgdsr)
+```
+
+Prostate Cancer: Alternative site on chemo resistant gene for the treatment
+
+Kirti Agrawal
+Louisiana State University
+
+
+Abstract:
+Prostate cancer also known as Prostatic Carcinoma. This type of cancer is generally asymptomatic. This led to the enlargement of the prostate specially in the old age group males, also cause difficulty to urinate. Prostate specific antigens are present in the blood and with the increase in their level, the possibility of the Prostate cancer increases. This can be used to diagnose the cancer or the possibility of its occurrence in an individual. Many researchers found genetic markers for the prostate cancer known as SNPs (Single Nucleotide Polymorphisms) responsible to cause the disease at the genetic level. SNPs are not the epigenetic modification but they could change some motif of gene locus which could favor some epigenetic factors and they might lead to the activation or the repression of the gene, which in turn can lead to the silencing or expression of the gene. Even there are many genes are chemo resistant and expresses even after the chemotherapy. The overall aim of the project is to find the chemo resistant gene that is responsible for Prostate cancer and find gate keeper residues sites or second suppressor sites depending on open or close confirmation. The expected scope of this project is to use the novel research is that sphingolipids regulate Prostate cancer cells response to chemotherapy [12]. It will identify the gene’s non chemo resistant drug targeted site. The expected result would be to have identified a chemo resistant gene that expresses even after the therapy, and a gate keeper residues site or second suppressor site of this gene.
+ 
+Introduction
+Cancer is characterized by abnormal cell growths that destroy other cells and tissue.  Prostate cancer is the presence of these cell growths or tumors in the prostate gland. This type of cancer is also known as Prostatic Carcinoma [1]. In United States death due to Prostate cancer is wide common, and approximately there is a hike of 33% in prostate cancer cases over there [2]. Even risk of prostate cancer is common in African countries specially in growing age men and positive family history [4]. It can be cured if detected in early stage using radiotherapy or radical prostatectomy [4, 5]. If the patient is diagnosed with stage 4 Prostate cancer than more aggressive treatment is required like chemotherapy, surgery, and high intensity drugs [6]. Screening of such type of cancer is questionable as in early stage its growth progress is slow and undetectable. Whereas, when this growth turns to tumors, it causes death [7]. Chemotherapy is not the standard treatment used for prostate cancer but it is used when prostate cancer has spread outside the gland and other therapy is not working. It is recommended to be used with hormone therapy specially in the metastasis prostate cancer [6]. Therefore, even after surgery, patients may still suffer lifelong cognitive side effects. Prostate cancer severity increases with age and recurrences are noticed. Researchers are using label-free method to predict prostate cancer in the patients with high risk of recurrence [8]. Chemoresistance is major cause of reoccurrence of cancer and this is the case in prostate cancer also. Previously researchers found some drug to which the body with cancer gets resistant like paclitaxel (PTX) for prostate cancer [11]. Then the combination therapy came into picture. In this study, I have been finding the genes responsible for causing the prostate cancer using cBioPortal and which of them is chemo resistant by gene sequencing and pathway analysis. Statistical analysis is done using the cBioPortal and GEPIA2. After the identification of the chemo resistant gene, the gate keeper residues sites or second suppressor sites depending on open or close confirmation was planned to found using SWISS MODEL. 
+NOTE: As gene sequencing is an expensive method that part and further to it has not been performed.
+
+Materials And Methods
+Data collection: cBioPortal (https://www.cbioportal.org/) is the exploratory analysis tool which provided the prostate cancer genomic data. 17 studies of prostate cancer were selected which has 6345 samples. From 6051 purified samples 17768 genes were downloaded. On the basis of number of samples with one or more mutations the data has sorted to find the top 5 mutated genes.
+
+
+Table 1: 17 Prostate cancer studies from cBioPortal
+ 
+Selection of genes and their analysis: Top 5 genes were selected on the basis of the number of samples with one or more mutations. Using cBioPortal on the basis of gene query the cancer detailed type summary was mapped on the basis of alteration frequency and the Survival plot is been plotted.
+Statistical analysis using GEPIA2 (http://gepia2.cancer-pku.cn/#index): GEPIA2 provides a large-scale expression profiling and interactive analysis for the genomic data. Using GEPIA2 boxplot has been plotted for all the individual genes that was selected in the previous step. Also, gene is compared to each other by comparison analysis in GEPIA2.
+NOTE: The genes selected might not be the chemo resistant gene so after getting the data from the cBioPortal genome analysis is to performed and finding the chemo resistant genes for the prostate cancer and how these genes are functioning so Pathway analysis is to be done. Then using the cBioPortal and GEPIA2 analysis can be performed on the basis of the gene. After getting the gene that needs to be targeted, so the protein expressed due to the expression of that particular gene is selected using the PubMed and other drug target can be identified using the SWISS MODEL and these sites are known as gate keeper sites or second suppressor sites.
+
+
+
+Results and Discussions:
+Generally prostate cancer is a type of cancer that grow very slowly and at its stage IV it tends to spread over other parts of the body. It can be treated using radiant therapy and chemotherapy. If detected at early stages than the operation for the removal of prostate gland can be helpful. Even after chemotherapy the cancer cells regrow and passes on to different locations in body and cause cancer over there. Such kind of situations have become very dreadful. Initially people found the combination therapy to overcome this problem like using Hh inhibitor cyclopamine with paclitaxel [11]. Also, multiple pathways have been identified that are responsible for the chemo resistance like androgen pathway [11]. In the current study, top five genes (table 2) have been selected from the mutated genes chart from cBioPortal.
+Table2: Top 5 mutated genes 
+Gene	# Mut	# Number of samples with one or more mutations	Profiled Samples	Freq
+TP53	1567	1501	5975	25.10%
+SPOP	600	591	5869	10.10%
+FOXA1	590	567	5869	9.70%
+TTN	568	426	2842	15.00%
+KMT2C	462	392	5839	6.70%
+From the figure 1 it was found the different kinds of prostate cancer caused due to the mutations in the selected genes. Figure 2 explains about the survival plot. It says the probability of the survivality of altered group is more than the unaltered group.
+
+Figure 1: Cancer type detailed
+ 
+ Figure 2: Survival Plot
+ 
+
+
+Figure 3: Boxplot- Graphical statistical analysis to show which gene is getting mutated more. (Red – tumor color and grey – normal color)
+    
+                     FOXA1                                     KMT2C                                        SPOP
+   
+                         TTN                                       TP53
+
+Comparison analysis is been done between the gene KMT2C and TP53 because KMT2C is the gene which was found to be mutated at higher level as seen in the boxplot and TP53 is the most common mutated gene in all types of cancer (Figure 4). There is the positive relation between the two genes and the null hypothesis has been rejected. 
+
+
+
+Figure 4: Correlation analysis between the KMT2C and TP53
+ 
+
+
+
+Conclusion:
+From the current study it is evident that there are thousands of genes that are getting mutated and because of which cancer is being caused. From the literature it quite sure that even genes might be chemo resistant and which portion of it is chemo resistant and that can be found by performing genomic analysis and pathway analysis and then same kind of statistical and analytical analysis needed to be done to find the most potent gene and on the basis of that the alternative site can be determined for the drug targets.
+
+
+
+
+
+
+
+
+
+
+Reference:
+1. Mohler, J., Bahnson, R. R., Boston, B., Busby, J. E., D'Amico, A., Eastham, J. A., ... & Walsh, P. C. (2010). Prostate cancer. Journal of the National Comprehensive Cancer Network, 8(2), 162-200.
+2. Crawford, E. D. (2003). Epidemiology of prostate cancer. Urology, 62(6), 3-12.
+3. Grönberg, H. (2003). Prostate cancer epidemiology. The Lancet, 361(9360), 859-864.
+4. https://www.cancer.org/cancer/prostate-cancer/treating/by-stage.html
+5. https://pasadenacyberknife.com/is-prostate-cancer-curable/
+6. PDQ Adult Treatment Editorial Board. Prostate Cancer Treatment (PDQ®): Health Professional Version. 2021 Sep 3. In: PDQ Cancer Information Summaries [Internet]. Bethesda (MD): National Cancer Institute (US); 2002-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK66036/
+7. Catalona W. J. (2018). Prostate Cancer Screening. The Medical clinics of North America, 102(2), 199–214. https://doi.org/10.1016/j.mcna.2017.11.001
+8. Sridharan, S., Macias, V., Tangella, K., Melamed, J., Dube, E., Kong, M. X., Kajdacsy-Balla, A., & Popescu, G. (2016). Prediction of prostate cancer recurrence using quantitative phase imaging: Validation on a general population. Scientific reports, 6, 33818. https://doi.org/10.1038/srep33818
+9. Zhang, W., Meng, Y., Liu, N., Wen, X. F., & Yang, T. (2015). Insights into Chemoresistance of Prostate Cancer. International journal of biological sciences, 11(10), 1160–1170. https://doi.org/10.7150/ijbs.11439
+10. Singh, S., Chitkara, D., Mehrazin, R., Behrman, S. W., Wake, R. W., & Mahato, R. I. (2012). Chemoresistance in prostate cancer cells is regulated by miRNAs and Hedgehog pathway. PloS one, 7(6), e40021. https://doi.org/10.1371/journal.pone.0040021
+11. Singh, S., Chitkara, D., Mehrazin, R., Behrman, S. W., Wake, R. W., & Mahato, R. I. (2012). Chemoresistance in prostate cancer cells is regulated by miRNAs and Hedgehog pathway. PloS one, 7(6), e40021. https://doi.org/10.1371/journal.pone.0040021
+12. Ingram, L.M., Finnerty, M.C., Mansoura, M. et al. Identification of lipidomic profiles associated with drug-resistant prostate cancer cells. Lipids Health Dis 20, 15 (2021). https://doi.org/10.1186/s12944-021-01437-5
+13. Abate-Shen, C., & Shen, M. M. (2000). Molecular genetics of prostate cancer. Genes & development, 14(19), 2410-2434.
+14. Ilic, D., Neuberger, M. M., Djulbegovic, M., & Dahm, P. (2013). Screening for prostate cancer. Cochrane Database of Systematic Reviews, (1).
+15. Pienta, K. J., & Esper, P. S. (1993). Risk factors for prostate cancer. Annals of internal medicine, 118(10), 793-803.
+16. Cerami et al. The cBio Cancer Genomics Portal: An Open Platform for Exploring Multidimensional Cancer Genomics Data. Cancer Discovery. May 2012 2; 401. PubMed.
+17. Tang, Z., Li, C., Kang, B., Gao, G., Li, C., & Zhang, Z. (2017). GEPIA: a web server for cancer and normal gene expression profiling and interactive analyses. Nucleic acids research, 45(W1), W98–W102. https://doi.org/10.1093/nar/gkx247
